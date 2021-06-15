@@ -1,0 +1,45 @@
+<div class="bgg">
+  <div class="container-fluid ">
+  
+      <div class="row d-flex align-items-center">
+  
+          <div class="col-md-12">
+  
+              <div class="row d-flex justify-content-center p-100">
+                  <div class="col-md-4">
+                      <div class="card border-warning mb-3 " style="max-width: 600rem;">
+                        <a class="navbar-brand" href="#">
+                          <img src="https://i.imgur.com/53zCib6.png" alt="teste" width="50px" height="50px">
+                      </a>
+                      <h1 class="text-center mb-3">Entrar</h1>
+  
+                      <div class="form-group pd-top-20">
+                        <label for="usuario">Usuário</label>
+                        <input [(ngModel)]='userLogin.email' type="text" class="form-control" id="usuario" placeholder="Seu usuário">
+                      </div>  
+                      <div class="form-group mb-4" class="pd-top-20">
+                        <label for="senha">Senha</label>
+                        <input [(ngModel)]='userLogin.senha' type="password" class="form-control" id="senha" placeholder="Senha">
+                      </div>
+  
+                      <div class="row d-flex justify-content-center mr-4 my-4">
+                          <button type="submit" class="btn btn-lg btn-warning text-white" (click)='entrar()'>Entrar</button>
+                      </div>
+  
+                      <hr class="mt-5 mb-5">
+  
+                      <p class="text-center">
+                          Não tem uma conta? <a routerLink='/cadastrar'>Cadastre-se</a>
+                      </p>
+  
+                  </div>
+              </div>
+                  <div class="col-md-6 d-flex justify-content-center">
+                      <img src="https://i.imgur.com/hMZLeHt.png" height="600rem"  alt="">
+                  </div> 
+              </div>
+          </div>          
+      </div>
+  </div> 
+  
+  

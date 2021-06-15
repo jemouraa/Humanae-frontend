@@ -1,0 +1,40 @@
+.bg-gray-text {
+    color: #333;
+}
+
+.bg-gray-input {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    border-left: 2px solid #929292;
+    transition: all 0.4s;
+}
+
+.btn-form {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 9px 30px;
+    text-align: center;
+    font-size: 15px;
+    text-transform: capitalize;
+    letter-spacing: 0.7px;
+    font-weight: 600;
+    border: 2px solid #88e948;
+    background: #88e948;
+    border-radius: 30px;
+    cursor: pointer;
+    color: #fff;
+    margin-top: 25px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: 'Source Sans Pro', sans-serif;
+    will-change: transform;
+}
+
+@media (max-width: 767px)
+{
+  #email
+   {
+    margin-top: 15px;
+   }
+}

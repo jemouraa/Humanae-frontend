@@ -1,0 +1,110 @@
+*{
+    margin: 30;
+    padding: 50;
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #777
+}
+
+h1{
+    font-size: 60px;
+    color: #2672B0;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+}
+
+.p1{
+    font-size: 20px;
+    color: #3489ce;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+}
+
+h3{
+    font-size: 24px;
+    color:#333;
+    font-weight: bold;
+}
+
+#time img{
+    margin-top:-50px;
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    object-position: center;
+}
+
+#time i{
+    font-size: 26px;
+    color:#555;
+}
+#time p{
+    font-weight: 500;
+}
+.card{
+    border-radius: 0;
+    box-shadow: 5px 5px 15px #fdbe0f;
+    transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    max-height: 25rem;
+    min-height: 25rem;
+    position:relative;
+}
+
+.card:hover{
+    background: #fdbe0f;
+    color: #fff;
+    border-radius: 5px;
+    border:none;
+    box-shadow: 5px 5px 10px #9E9E9E;
+}
+
+.card-body{
+    min-height: 30px;
+    min-width: 50px;
+}
+
+#time .card:hover h3, #time .card:hover i{
+color: #fff;
+}
+
+.iconRedes{
+    position: absolute;
+    bottom: 0;
+    left: 22%;
+    
+}
+
+
+ul.rede-social{
+    list-style: none;
+    padding: 0;
+}
+
+ul.rede-social li{
+    display: inline;
+    margin: 0;
+    padding: 5px;
+}
+
+.fa{
+    font-size: 35pt;
+    color: black;
+    padding: 10px;
+}
+
+.fa-github-square:hover{
+    color: #333;
+}
+
+.fa-github:hover{
+    color:aqua
+}
+.bgcolor{
+    background-color: #e9e9e9;
+  }
