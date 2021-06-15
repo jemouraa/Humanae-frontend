@@ -16,12 +16,6 @@
                             <option value="parceiro">Parceiro</option>
                         </select>
                     </div>
-
-                    <div class="form-group"> 
-                        <label for="usuario">Usuário</label>
-                        <input class="form-control" type="text" nome="usuario" id="usuario" placeholder="Seu usuário">
-                    </div>
-
             <div class="form-group">
                 <label for="nome">Nome</label>
                 <input [(ngModel)]='user.nome' class="form-control" type="text" nome="nome" id="nome" placeholder="Seu nome" required>
@@ -37,7 +31,7 @@
                 <input [(ngModel)]='user.imagem'  class="form-control" type="text" nome="foto" id="foto" placeholder="Sua foto" >
             </div>
             <div class="form-group">
-                <label  for="causa">Descricao</label>
+                <label  for="causa">Causa</label>
                 <input [(ngModel)]='user.causa'  class="form-control" type="text" nome="causa" id="causa" placeholder="Sua causa">
             </div>
             
