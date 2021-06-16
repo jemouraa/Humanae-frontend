@@ -16,6 +16,10 @@
   appearance: none;
   }
 
+  .bgcolor{
+    background-color: #f5f1f1;
+  }
+
 .p-100{
     padding: 100px 3% 20px;
 }
@@ -44,6 +48,13 @@
   color: #2672B0;
 }
 
+h1{
+    font-size: 60px;
+    color: #2672B0;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+}
+
 .menu-fixo{
     position: fixed;
     top: 0;
@@ -53,16 +64,18 @@
 
 .fs1{
     font-family: "Roboto", sans-serif;
-    font-size: 15pt;
+    font-size: 20pt;
     color: #2672B0;
     font-style: initial;
+    font-weight: bold;
 }
 
 .fs2{
     font-family: "Roboto", sans-serif;
-    font-size: 50pt;
+    font-size: 20pt;
     color: #2672B0;
     font-style: initial;
+    font-weight: bold;
 }
 
 body{
@@ -160,5 +173,9 @@ body{
 .container .card .face.face2 .content a:hover{
     background: rgb(244, 244, 245);
     color:  #2672B0;
+}
+
+hr{
+    height: 30px;
 }
   
