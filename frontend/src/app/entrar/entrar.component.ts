@@ -36,10 +36,12 @@ export class EntrarComponent implements OnInit {
       environment.email = this.userLogin.email
       environment.tipo = this.userLogin.tipo
 
-
-      console.log(environment);
-      
-      this.router.navigate(['/parceiros/id'])
+      if(this.userLogin.tipo == 'doador') {
+        this.router.navigate(['/causas'])
+      } else {
+        console.log(environment);
+        this.router.navigate(['/parceiros/id'])
+      }
 
     },error=>{
       if( error.status == 500 ){

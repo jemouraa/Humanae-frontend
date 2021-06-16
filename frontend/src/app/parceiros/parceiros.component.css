@@ -18,6 +18,7 @@
 
 
 .bg{
+
     background-color: whitesmoke;
 
 }
@@ -66,9 +67,11 @@ ul.social-network{
 .btn-blue {
     background-color: #2672B0;
     border-color: #2672B0;    
+    color: white;
 }
 .tx{
     color: #2672B0
+
 }
 .card-deck{
     position: absolute;

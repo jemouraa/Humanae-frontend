@@ -35,6 +35,7 @@ import { ContatoComponent } from './contato/contato.component';
     HomeComponent,
     TimeComponent,
     ContatoComponent
+  
   ],
   imports: [
     BrowserModule,

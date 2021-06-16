@@ -1,3 +1,4 @@
+
 import { Produto } from './../model/Produto';
 import { AuthService } from './../service/auth.service';
 import { UserLogin } from './../model/UserLogin';
@@ -27,6 +28,8 @@ export class ParceirosComponent implements OnInit{
   imagem = environment.imagem
   descricao = environment.descricao
   causa = environment.causa
+  produtoCompra = environment.produto
+  
 
   constructor(
     private router: Router,
@@ -98,6 +101,10 @@ export class ParceirosComponent implements OnInit{
         this.produto = new Produto
     })
   }
-
-
+  //comprar(){
+    //this.produtoCompra = environment.produto
+    //this.produtoService.getByIdProdutos(this.produto.id).subscribe((resp: Produto) => {
+     // this.produto = resp
+ // })
+//}
 }

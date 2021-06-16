@@ -17,6 +17,7 @@ const routes: Routes = [
   {path: 'parceiros/:id', component: ParceirosComponent},
   {path: 'carrinho', component: CarrinhoComponent},
   {path: 'causas', component: CausasComponent}
+  
 
 ];
 

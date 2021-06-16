@@ -1,3 +1,4 @@
+import { Produto } from './../app/model/Produto';
 export const environment = {
   production: true,
   token: '',
@@ -7,5 +8,6 @@ export const environment = {
   imagem: '',
   tipo: '',
   descricao: '',
-  causa: ''
+  causa: '',
+  produto: Produto
 };
