@@ -1,350 +1,393 @@
 <div class="bg">
-<div class="container-fluid">
-<!--Navbar-->
-<!--<app-menu></app-menu>--> 
-  <!--/Navbar-->
-</div>
+<app-menu></app-menu>
+  <div class="container-fluid">
+    <div class="card-deck mt-5">
+           <div class="row col-md h-100 mt-5" *ngFor="let user of listaUser">
+              <div class=" container-fluid d-flex justify-content-center">
+                <div class="d-flex justify-content-center">
+                  <div
+                    class="profile-img text-center"
+                    style="
+                      margin: 1rem;
+                      width: 12.5rem;
+                      height: 12.5rem;
+                      border-radius: 50%;
+                      overflow: hidden;
+                      border-style: solid;
+                      border-color: whitesmoke;
+                    "
+                  >
+                    <img
+                      class="img-fluid"
+                      src="{{user.imagem}}"
+                      alt="imagem de perfil"
+                    />
+                  </div>
+                  <div class="container card-perfil text-center h-100">
+                    <h4 class="d-flex justify-content-center">
+                      {{user.nome  | uppercase }}
+                    </h4>
+                    <p>
+                     {{user.causa | slice:0:15}}
+                    </p>
+                    <p>
+                      {{user.descricao | slice:0:160}}
+                     </p>
 
-<div class="container-fluid mb-5 mt-5">  
-  <ul class="nav nav-tabs d-flex justify-content-center " id="myTab" role="tablist">
-    <li class="nav-item">
-      <a class="nav-link active text-warning font-weight-bold" id="mulheres-tab" data-toggle="tab" href="#mulheres" role="tab" aria-controls="mulheres" aria-selected="true">Mulheres</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link text-warning font-weight-bold" id="educacao-tab" data-toggle="tab" href="#educacao" role="tab" aria-controls="educacao" aria-selected="false">Educação</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link text-warning font-weight-bold" id="saude-tab" data-toggle="tab" href="#saude" role="tab" aria-controls="saude" aria-selected="false">Saúde</a>
-    </li>
-  </ul>
-  <!--/Mulheres-->
-  <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="mulheres" role="tabpanel" aria-labelledby="mulheres-tab">
-      <div class="row d-flex justify-content-around pt-4">
-        <div class="row">
-          <div class="col container">
-            <div class="d-flex justify-content-center">
-              <div
-                class="profile-img text-center"
-                style="
-                  margin-top: 1rem;
-                  width: 12.5rem;
-                  height: 12.5rem;
-                  border-radius: 50%;
-                  overflow: hidden;
-                  border-style: solid;
-                  border-color: whitesmoke;
-                "
-              >
-                <img
-                  class="img-fluid"
-                  src="https://i.imgur.com/93uzlek.jpg"
-                  alt="imagem de perfil"
-                />
+                    <button
+                      type="button"
+                      class="btn btn-warning text-white m-3" [routerLink]="['/parceiros/', user.id]" >
+                      Ver Produtos
+                    </button>
+                  </div>
+                </div>
               </div>
-              <div class="container card-perfil text-center">
-                <h4 class="d-flex justify-content-center">Fluxo Sem Tabu</h4>
-                <p>
-                  Fluxo sem tabu? Sim isso pode ser transformado em realidade a muitas mulheres em situação de vulnerabilidade
-                </p>
-  
-                <a type="button" class="btn btn-warning text-white m-3" routerLink='/parceiros'>
-                  Ver Produtos
-                </a>
+            </div>
+           <!--- <div class="row">
+              <div class="col container">
+                <div class="d-flex justify-content-center">
+                  <div
+                    class="profile-img text-center"
+                    style="
+                      margin-top: 1rem;
+                      width: 12.5rem;
+                      height: 12.5rem;
+                      border-radius: 50%;
+                      overflow: hidden;
+                      border-style: solid;
+                      border-color: whitesmoke;
+                    "
+                  >
+                    <img
+                      class="img-fluid"
+                      src="https://i.imgur.com/RMTFVjy.jpg"
+                      alt="imagem de perfil"
+                    />
+                  </div>
+                  <div class="container card-perfil text-center">
+                    <h4 class="d-flex justify-content-center">Fala Mulher</h4>
+                    <p>
+                      Empoderando mulheres e fortalecendo familias, atuando na
+                      defesa e garantia de seus direitos humanos.
+                    </p>
+
+                    <a
+                      type="button"
+                      class="btn btn-warning text-white m-3"
+                      href="#"
+                    >
+                      Ver Produtos
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+           <div class="row">
+              <div class="col container">
+                <div class="d-flex justify-content-center">
+                  <div
+                    class="profile-img text-center"
+                    style="
+                      margin-top: 1rem;
+                      width: 12.5rem;
+                      height: 12.5rem;
+                      border-radius: 50%;
+                      overflow: hidden;
+                      border-style: solid;
+                      border-color: whitesmoke;
+                    "
+                  >
+                    <img
+                      class="img-fluid"
+                      src="https://i.imgur.com/xEycTzr.png"
+                      alt="imagem de perfil"
+                    />
+                  </div>
+                  <div class="container card-perfil text-center">
+                    <h4 class="d-flex justify-content-center">
+                      Mulheres da Luz
+                    </h4>
+                    <p>
+                      Promovemos a cidadania das mulheres em situação de
+                      prostituição do Parque da Luz e entornos.
+                    </p>
+
+                    <a
+                      type="button"
+                      class="btn btn-warning text-white m-3"
+                      href="#"
+                    >
+                      Ver Produtos
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col container">
-            <div class="d-flex justify-content-center">
-              <div
-                class="profile-img text-center"
-                style="
-                  margin-top: 1rem;
-                  width: 12.5rem;
-                  height: 12.5rem;
-                  border-radius: 50%;
-                  overflow: hidden;
-                  border-style: solid;
-                  border-color: whitesmoke;
-                "
-              >
-                <img
-                  class="img-fluid"
-                  src="https://i.imgur.com/RMTFVjy.jpg"
-                  alt="imagem de perfil"
-                />
+        <div
+          class="tab-pane fade"
+          id="educacao"
+          role="tabpanel"
+          aria-labelledby="educacao-tab"
+        >
+          <div class="row d-flex justify-content-around pt-4">
+            <div class="row">
+              <div class="col container">
+                <div class="d-flex justify-content-center">
+                  <div
+                    class="profile-img text-center"
+                    style="
+                      margin-top: 1rem;
+                      width: 12.5rem;
+                      height: 12.5rem;
+                      border-radius: 50%;
+                      overflow: hidden;
+                      border-style: solid;
+                      border-color: whitesmoke;
+                    "
+                  >
+                    <img
+                      class="img-fluid"
+                      src="https://i.imgur.com/fo6pdhd.jpg"
+                      alt="imagem de perfil"
+                    />
+                  </div>
+                  <div class="container card-perfil text-center">
+                    <h4 class="d-flex justify-content-center">
+                      Gerando Falcões
+                    </h4>
+                    <p>
+                      Somos frutos de uma visão: "Não importa de onde você vem,
+                      mas pra onde você vai".
+                    </p>
+
+                    <a
+                      type="button"
+                      class="btn btn-warning text-white m-3"
+                      href="#"
+                    >
+                      Ver Produtos
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div class="container card-perfil text-center">
-                <h4 class="d-flex justify-content-center">Fala Mulher</h4>
-                <p>
-                  Empoderando mulheres e fortalecendo familias, atuando na defesa e garantia de seus direitos humanos.
-                </p>
-  
-                <a type="button" class="btn btn-warning text-white m-3" href="#">
-                  Ver Produtos
-                </a>
+            </div>
+            <div class="row">
+              <div class="col container">
+                <div class="d-flex justify-content-center">
+                  <div
+                    class="profile-img text-center"
+                    style="
+                      margin-top: 1rem;
+                      width: 12.5rem;
+                      height: 12.5rem;
+                      border-radius: 50%;
+                      overflow: hidden;
+                      border-style: solid;
+                      border-color: whitesmoke;
+                    "
+                  >
+                    <img
+                      class="img-fluid"
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0peZjOfmVsqimeRad3RxAIdP_MCsDOIPELg&usqp=CAU"
+                      alt="imagem de perfil"
+                    />
+                  </div>
+                  <div class="container card-perfil text-center">
+                    <h4 class="d-flex justify-content-center">
+                      Sementes do Amanhã
+                    </h4>
+                    <p>
+                      Uma comunhão entre as crianças que supere as barreiras de
+                      preconceitos raciais
+                    </p>
+
+                    <a
+                      type="button"
+                      class="btn btn-warning text-white m-3"
+                      href="#"
+                    >
+                      Ver Produtos
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col container">
+                <div class="d-flex justify-content-center">
+                  <div
+                    class="profile-img text-center"
+                    style="
+                      margin-top: 1rem;
+                      width: 12.5rem;
+                      height: 12.5rem;
+                      border-radius: 50%;
+                      overflow: hidden;
+                      border-style: solid;
+                      border-color: whitesmoke;
+                    "
+                  >
+                    <img
+                      class="img-fluid"
+                      src="https://i.imgur.com/Wd8BtZu.jpg"
+                      alt="imagem de perfil"
+                    />
+                  </div>
+                  <div class="container card-perfil text-center">
+                    <h4 class="d-flex justify-content-center">
+                      Todos pela Educação
+                    </h4>
+                    <p>
+                      Engajar o poder público e a sociedade brasileira a
+                      assegurar o direito à Educação Básica.
+                    </p>
+
+                    <a
+                      type="button"
+                      class="btn btn-warning text-white m-3"
+                      href="#"
+                    >
+                      Ver Produtos
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col container">
-            <div class="d-flex justify-content-center">
-              <div
-                class="profile-img text-center"
-                style="
-                  margin-top: 1rem;
-                  width: 12.5rem;
-                  height: 12.5rem;
-                  border-radius: 50%;
-                  overflow: hidden;
-                  border-style: solid;
-                  border-color: whitesmoke;
-                "
-              >
-                <img
-                  class="img-fluid"
-                  src="https://i.imgur.com/xEycTzr.png"
-                  alt="imagem de perfil"
-                />
+
+        <div
+          class="tab-pane fade"
+          id="saude"
+          role="tabpanel"
+          aria-labelledby="saude-tab"
+        >
+          <div class="row d-flex justify-content-around pt-4">
+            <div class="row">
+              <div class="col container">
+                <div class="d-flex justify-content-center">
+                  <div
+                    class="profile-img text-center"
+                    style="
+                      margin-top: 1rem;
+                      width: 12.5rem;
+                      height: 12.5rem;
+                      border-radius: 50%;
+                      overflow: hidden;
+                      border-style: solid;
+                      border-color: whitesmoke;
+                    "
+                  >
+                    <img
+                      class="img-fluid"
+                      src="https://i.imgur.com/i2dcn5y.jpg"
+                      alt="imagem de perfil"
+                    />
+                  </div>
+                  <div class="container card-perfil text-center">
+                    <h4 class="d-flex justify-content-center">Horas da Vida</h4>
+                    <p>
+                      Promovemos a inclusão social e o acesso a saúde para
+                      pessoas em situação de vulnerabilidade social.
+                    </p>
+
+                    <a
+                      type="button"
+                      class="btn btn-warning text-white m-3"
+                      href="#"
+                    >
+                      Ver Produtos
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div class="container card-perfil text-center">
-                <h4 class="d-flex justify-content-center">Mulheres da Luz</h4>
-                <p>
-                 Promovemos a cidadania das mulheres em situação de prostituição do Parque da Luz e entornos.
-                </p>
-  
-                <a type="button" class="btn btn-warning text-white m-3" href="#">
-                  Ver Produtos
-                </a>
+            </div>
+            <div class="row">
+              <div class="col container">
+                <div class="d-flex justify-content-center">
+                  <div
+                    class="profile-img text-center"
+                    style="
+                      margin-top: 1rem;
+                      width: 12.5rem;
+                      height: 12.5rem;
+                      border-radius: 50%;
+                      overflow: hidden;
+                      border-style: solid;
+                      border-color: whitesmoke;
+                    "
+                  >
+                    <img
+                      class="img-fluid"
+                      src="https://i.imgur.com/UjuNM7W.jpg"
+                      alt="imagem de perfil"
+                    />
+                  </div>
+                  <div class="container card-perfil text-center">
+                    <h4 class="d-flex justify-content-center">Turma do Bem</h4>
+                    <p>
+                      Promovemos soluções de acesso a tratamentos odontológicos
+                      a pessoas em situação de vulnerabilidade social.
+                    </p>
+
+                    <a
+                      type="button"
+                      class="btn btn-warning text-white m-3"
+                      href="#"
+                    >
+                      Ver Produtos
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col container">
+                <div class="d-flex justify-content-center">
+                  <div
+                    class="profile-img text-center"
+                    style="
+                      margin-top: 1rem;
+                      width: 12.5rem;
+                      height: 12.5rem;
+                      border-radius: 50%;
+                      overflow: hidden;
+                      border-style: solid;
+                      border-color: whitesmoke;
+                    "
+                  >
+                    <img
+                      class="img-fluid"
+                      src="https://i.imgur.com/jOQevdo.jpg"
+                      alt="imagem de perfil"
+                    />
+                  </div>
+                  <div class="container card-perfil text-center">
+                    <h4 class="d-flex justify-content-center">
+                      Trupe Miolo Mole
+                    </h4>
+                    <p>
+                      Promovendo transformação através da alegria da figura do
+                      palhaço atendendo crianças e adolescentes em
+                      vulnerabilidade social.
+                    </p>
+
+                    <a
+                      type="button"
+                      class="btn btn-warning text-white m-3"
+                      href="#"
+                    >
+                      Ver Produtos
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>  
-    </div>
-    </div>
- 
-<!--/Mulheres-->
-<!--Educacao-->
-<div class="tab-pane fade" id="educacao" role="tabpanel" aria-labelledby="educacao-tab">
-  <div class="row d-flex justify-content-around pt-4">
-    <div class="row">
-      <div class="col container">
-        <div class="d-flex justify-content-center">
-          <div
-            class="profile-img text-center"
-            style="
-              margin-top: 1rem;
-              width: 12.5rem;
-              height: 12.5rem;
-              border-radius: 50%;
-              overflow: hidden;
-              border-style: solid;
-              border-color: whitesmoke;
-            "
-          >
-            <img
-              class="img-fluid"
-              src="https://i.imgur.com/fo6pdhd.jpg"
-              alt="imagem de perfil"
-            />
-          </div>
-          <div class="container card-perfil text-center">
-            <h4 class="d-flex justify-content-center">Gerando Falcões</h4>
-            <p>
-              Somos frutos de uma visão: "Não importa de onde você vem, mas pra onde você vai".
-            </p>
-
-            <a type="button" class="btn btn-warning text-white m-3" href="#">
-              Ver Produtos
-            </a>
-          </div>
-        </div>
+        </div>-->
       </div>
     </div>
-    <div class="row">
-      <div class="col container">
-        <div class="d-flex justify-content-center">
-          <div
-            class="profile-img text-center"
-            style="
-              margin-top: 1rem;
-              width: 12.5rem;
-              height: 12.5rem;
-              border-radius: 50%;
-              overflow: hidden;
-              border-style: solid;
-              border-color: whitesmoke;
-            "
-          >
-            <img
-              class="img-fluid"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0peZjOfmVsqimeRad3RxAIdP_MCsDOIPELg&usqp=CAU"
-              alt="imagem de perfil"
-            />
-          </div>
-          <div class="container card-perfil text-center">
-            <h4 class="d-flex justify-content-center">Sementes do Amanhã</h4>
-            <p>
-              Uma comunhão entre as crianças que supere as barreiras de
-              preconceitos raciais
-            </p>
-
-            <a type="button" class="btn btn-warning text-white m-3" href="#">
-              Ver Produtos
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col container">
-        <div class="d-flex justify-content-center">
-          <div
-            class="profile-img text-center"
-            style="
-              margin-top: 1rem;
-              width: 12.5rem;
-              height: 12.5rem;
-              border-radius: 50%;
-              overflow: hidden;
-              border-style: solid;
-              border-color: whitesmoke;
-            "
-          >
-            <img
-              class="img-fluid"
-              src="https://i.imgur.com/Wd8BtZu.jpg"
-              alt="imagem de perfil"
-            />
-          </div>
-          <div class="container card-perfil text-center">
-            <h4 class="d-flex justify-content-center">Todos pela Educação</h4>
-            <p>
-              Engajar o poder público e a sociedade brasileira a assegurar o direito à Educação Básica.
-            </p>
-
-            <a type="button" class="btn btn-warning text-white m-3" href="#">
-              Ver Produtos
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>  
-</div>
-</div>
-<!--/Educacao-->
-<!--Saude-->
-<div class="tab-pane fade" id="saude" role="tabpanel" aria-labelledby="saude-tab">
-  <div class="row d-flex justify-content-around pt-4">
-    <div class="row">
-      <div class="col container">
-        <div class="d-flex justify-content-center">
-          <div
-            class="profile-img text-center"
-            style="
-              margin-top: 1rem;
-              width: 12.5rem;
-              height: 12.5rem;
-              border-radius: 50%;
-              overflow: hidden;
-              border-style: solid;
-              border-color: whitesmoke;
-            "
-          >
-            <img
-              class="img-fluid"
-              src="https://i.imgur.com/i2dcn5y.jpg"
-              alt="imagem de perfil"
-            />
-          </div>
-          <div class="container card-perfil text-center">
-            <h4 class="d-flex justify-content-center">Horas da Vida</h4>
-            <p>
-              Promovemos a inclusão social e o acesso a saúde para pessoas em situação de vulnerabilidade social.
-            </p>
-
-            <a type="button" class="btn btn-warning text-white m-3" href="#">
-              Ver Produtos
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col container">
-        <div class="d-flex justify-content-center">
-          <div
-            class="profile-img text-center"
-            style="
-              margin-top: 1rem;
-              width: 12.5rem;
-              height: 12.5rem;
-              border-radius: 50%;
-              overflow: hidden;
-              border-style: solid;
-              border-color: whitesmoke;
-            "
-          >
-            <img
-              class="img-fluid"
-              src="https://i.imgur.com/UjuNM7W.jpg"
-              alt="imagem de perfil"
-            />
-          </div>
-          <div class="container card-perfil text-center">
-            <h4 class="d-flex justify-content-center">Turma do Bem</h4>
-            <p>
-              Promovemos soluções de acesso a tratamentos odontológicos a pessoas em situação de vulnerabilidade social.
-            </p>
-
-            <a type="button" class="btn btn-warning text-white m-3" href="#">
-              Ver Produtos
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col container">
-        <div class="d-flex justify-content-center">
-          <div
-            class="profile-img text-center"
-            style="
-              margin-top: 1rem;
-              width: 12.5rem;
-              height: 12.5rem;
-              border-radius: 50%;
-              overflow: hidden;
-              border-style: solid;
-              border-color: whitesmoke;
-            "
-          >
-            <img
-              class="img-fluid"
-              src="https://i.imgur.com/jOQevdo.jpg"
-              alt="imagem de perfil"
-            />
-          </div>
-          <div class="container card-perfil text-center">
-            <h4 class="d-flex justify-content-center">Trupe Miolo Mole</h4>
-            <p>
-              Promovendo transformação através da alegria da figura do palhaço atendendo crianças e adolescentes em vulnerabilidade social.
-            </p>
-
-            <a type="button" class="btn btn-warning text-white m-3" href="#">
-              Ver Produtos
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>  
-</div>
-</div>
-
-<!--/Saude-->
-</div>
-</div>
-</div>
+  </div>

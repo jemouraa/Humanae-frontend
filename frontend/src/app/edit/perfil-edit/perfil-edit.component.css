@@ -1,0 +1,33 @@
+.bg{
+ background-color: whitesmoke;
+
+}
+
+.bgg{
+  color: #2672B0;
+  font-family: "Roboto", sans-serif;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+}
+
+label{
+  color: #2672B0;
+  font-family: "Roboto", sans-serif;
+  font-size: 16pt;
+  font-style: inherit;
+}
+
+h1{
+  color: #2672B0;
+  font-family: "Roboto", sans-serif;
+  font-size: 40pt;
+  font-weight: 500;
+}
+
+.card{
+  display: flex;
+  padding: 30px;
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgba(235, 220, 22, 0.8);
+}

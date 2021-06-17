@@ -1,0 +1,70 @@
+<div class="bg">
+  <div class="container justify-content-center ">
+    <div class="row ">
+      <div class="col-md-12 justify-content-center ">
+        <h1>Apagar Produto</h1>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-12">
+        <h4>Tem certeza que deseja apagar esse produto?</h4>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mt-4">
+      <div
+        class="card text-center mc h-100"
+        style="max-width: 18rem; max-height: 31.25rem"
+      >
+        <div class="container d-flex justify-content-center">
+          <div
+            class="container-fluid profile-img rounded"
+            style="overflow: hidden"
+          >
+            <img
+              src="{{ produtos.imagem }}"
+              alt="imagem do produto"
+              style="width: 250px; height: 200px"
+            />
+          </div>
+          <div
+            class="container-fluid d-flex justify-content-center"
+            style="padding-top: 14.375rem; max-height: 31.25rem"
+          >
+            <div>
+              <h5 class="">{{ produtos.nome }}</h5>
+              <p class="tx-cd">{{ produtos.descricao }}</p>
+              <h4 class="price font-weight-bold mt-2">
+                R$ {{ produtos.preco }}
+              </h4>
+              <div class="d-flex justify-content-between">
+                <!----<select class="custom-select mc">
+                 <option selected>Qtd</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option></select>
+                  </a  data-toggle="modal"
+                data-target="#carrinho"class="btn btn-warning mc"  >Quero doar!</a> 
+                -->
+                <button
+                  class="btn btn-blue mc"
+                  routerLink='/parceiros/id'
+                  >Não</button
+                >
+                <button class="btn btn-warning mc" (click)='apagarProdutos()'>Sim</button
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

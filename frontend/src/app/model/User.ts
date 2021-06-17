@@ -8,7 +8,7 @@ export class User {
     public causa: string
     public descricao: string
     public cnpj: string
-	public endereco: string
+	  public endereco: string
     public conta: string
     public imagem: string
     public tipo: string

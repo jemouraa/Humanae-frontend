@@ -9,8 +9,8 @@ import { UserLogin } from '../model/UserLogin';
   providedIn: 'root'
 })
 export class AuthService {
- 
-  
+
+
   constructor(
   private http: HttpClient
   ) { }
@@ -24,7 +24,7 @@ export class AuthService {
 
   cadastrar(user: User): Observable<User>{
     return this.http.post<User>("http://localhost:8080/usuarios/cadastrar", user)
-    
+
   }
   getByIdUser(id: number): Observable<User>{
     return this.http.get<User>(`http://localhost:8080/usuarios/${id}`, this.token)
@@ -45,6 +45,16 @@ export class AuthService {
     let ok: boolean = false
 
     if (environment.tipo == 'parceiro'){
+      ok = true
+    }
+
+    return ok
+  }
+
+  doador(){
+    let ok: boolean = false
+
+    if (environment.tipo == 'doador'){
       ok = true
     }
 

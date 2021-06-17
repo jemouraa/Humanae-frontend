@@ -28,15 +28,12 @@ export class ParceirosComponent implements OnInit{
   imagem = environment.imagem
   descricao = environment.descricao
   causa = environment.causa
-  produtoCompra = environment.produto
-  
 
   constructor(
     private router: Router,
     private produtoService: ProdutosService,
-    private route: ActivatedRoute,
     private usuarioService: UsuariosService,
-    private authService: AuthService
+    public authService: AuthService
 
 
   ) { }
@@ -54,12 +51,8 @@ export class ParceirosComponent implements OnInit{
       this.router.navigate(['/home']);
     }
 
-  
    this.findByIdUser();
-   
- 
     //console.log(id)
-
   }
 
   faFacebook = faFacebook;
@@ -67,24 +60,12 @@ export class ParceirosComponent implements OnInit{
   faHeart = faHeart;
   faCircleInfo = faInfoCircle
 
-  //findAllProdutos() {
-    //.produtoService.getAllProdutos().subscribe((resp: Produto[]) => {
-     // this.listaProdutos = resp
-     // console.log(this.listaProdutos)
-//})
- // }
   findByIdUser(){
     this.usuarioService.getByIdUsuario(this.idUser).subscribe((resp: User) => {
       this.user = resp
-    
+
     })
   }
-  //findByIdParceiro(id: number){
-    //this.usuarioService.getByIdUsuario(id).subscribe((resp: User) => {
-      //his.listaProdutos = resp.produto
-        //console.log(this.listaProdutos)
-    //})
- //}
 
   cadastrarProdutos() {
     this.user.id = environment.id
@@ -99,6 +80,7 @@ export class ParceirosComponent implements OnInit{
           'success'
         )
         this.produto = new Produto
+        this.findByIdUser()
     })
   }
   //comprar(){

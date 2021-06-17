@@ -1,8 +1,8 @@
+import { Categoria } from './../model/Categoria';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { User } from '../model/User';
-import { UserLogin } from '../model/UserLogin';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -12,11 +12,10 @@ import { AuthService } from '../service/auth.service';
 })
 
 export class CadastrarComponent implements OnInit {
-
+  
   user: User = new User()
-  confirmarSenha: String
+  confirmarSenha: string
   tipoUsuario: string
-
 
   constructor(
     private authService: AuthService,
@@ -59,7 +58,8 @@ export class CadastrarComponent implements OnInit {
           )
         })
       }
-       
+
   }
+
 
 }
