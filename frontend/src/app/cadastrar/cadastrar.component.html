@@ -8,14 +8,6 @@
                     <div class="card border-warning mb-3 " style="max-width: 600rem;">
                     <h1 class="text-center">Junte-se a nós</h1>
 
-                    <div class="form-group">
-                        <label for="tipo">Tipo de Usuário</label>
-                        <select class="form-control" name="tipo" id="tipo" (change)='tipoUser($event)'>
-                            <option>Selecione um tipo de usuário</option>
-                            <option value="doador">Doador</option>
-                            <option value="parceiro">Parceiro</option>
-                        </select>
-                    </div>
             <div class="form-group">
                 <label for="nome">Nome</label>
                 <input [(ngModel)]='user.nome' class="form-control" type="text" nome="nome" id="nome" placeholder="Seu nome" required>
