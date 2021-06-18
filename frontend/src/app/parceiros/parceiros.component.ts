@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 import { User } from '../model/User';
 import { ProdutosService } from '../service/produtos.service';
 
+
 @Component({
   selector: 'app-parceiros',
   templateUrl: './parceiros.component.html',
@@ -22,8 +23,8 @@ export class ParceirosComponent implements OnInit{
   user: User = new User()
   produto: Produto = new Produto()
   listaProdutos: Produto[]
+  listaUser: User[]
   userLogin: UserLogin = new UserLogin
-  idUser = environment.id
   nome = environment.nome
   imagem = environment.imagem
   descricao = environment.descricao
@@ -32,33 +33,22 @@ export class ParceirosComponent implements OnInit{
   quant: number
   vParcial: number
 
-
-
-
   constructor(
     private router: Router,
     private produtoService: ProdutosService,
     private usuarioService: UsuariosService,
-    public authService: AuthService
+    public authService: AuthService,
+    public route: ActivatedRoute
 
 
   ) { }
 
   ngOnInit() {
     window.scroll(0,0)
-
-    if(environment.token == '') {
-
-      Swal.fire({
-        icon: 'info',
-        title: 'Oops...',
-        text: 'Sua sessão expirou!'
-      })
-      this.router.navigate(['/home']);
-    }
-
-   this.findByIdUser();
-    //console.log(id)
+    let id = this.route.snapshot.params['id']
+    this.findByIdUser(id)
+    this.quant = 1
+    this.vParcial = this.produto.preco
   }
 
   faFacebook = faFacebook;
@@ -66,15 +56,20 @@ export class ParceirosComponent implements OnInit{
   faHeart = faHeart;
   faCircleInfo = faInfoCircle
 
-  findByIdUser(){
-    this.usuarioService.getByIdUsuario(this.idUser).subscribe((resp: User) => {
-      this.user = resp
 
+
+  findByIdUser(id: number){
+    this.usuarioService.getByIdUsuario(id).subscribe((resp: User) => {
+      this.user = resp
     })
   }
 
+
   cadastrarProdutos() {
-    this.user.id = environment.id
+    if (environment.token == '') {
+      this.router.navigate(['/entrar'])
+    }
+
     this.produto.usuario = this.user
     console.log(this.produto)
 
@@ -86,16 +81,14 @@ export class ParceirosComponent implements OnInit{
           'success'
         )
         this.produto = new Produto
-        this.findByIdUser()
+
     })
   }
 
-  findProdById(id: number) {
-    this.produtoService.getByIdProdutos(id).subscribe((resp: Produto) => {
-      this.produto = resp
-    })
-  }
 
+
+
+//Carrinho//
   process(value: number) {
     value += this.quant;
     if (value < 1) {
@@ -145,6 +138,8 @@ export class ParceirosComponent implements OnInit{
 
       this.router.navigate(['/carrinho'])
     }
+    //carrinho//
+
   }
 
 

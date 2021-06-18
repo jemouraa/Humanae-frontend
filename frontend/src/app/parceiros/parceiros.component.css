@@ -52,15 +52,15 @@
 ul.social-network{
     list-style: none;
     padding: 0;
-    
-   
+
+
   }
   ul.social-network li{
     display: inline;
     margin: 5px;
     padding: 10px;
   }
-  
+
 .icones{
     color:  #FECE2D;
     margin: 5px
@@ -68,7 +68,7 @@ ul.social-network{
 }
 .btn-blue {
     background-color: #2672B0;
-    border-color: #2672B0;    
+    border-color: #2672B0;
     color: white;
 }
 .tx{
@@ -77,6 +77,5 @@ ul.social-network{
 }
 .card-deck{
     position: absolute;
-    margin-left: 20rem;
     padding-top: 5rem;
 }

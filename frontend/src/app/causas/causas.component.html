@@ -2,7 +2,7 @@
 <app-menu></app-menu>
   <div class="container-fluid">
     <div class="card-deck mt-5">
-           <div class="row col-md h-100 mt-5" *ngFor="let user of listaUser">
+           <div class="row col-md  mt-5" *ngFor="let user of listaUser">
               <div class=" container-fluid d-flex justify-content-center">
                 <div class="d-flex justify-content-center">
                   <div
@@ -27,7 +27,7 @@
                     <h4 class="d-flex justify-content-center">
                       {{user.nome  | uppercase }}
                     </h4>
-                    <p>
+                    <p >
                      {{user.causa | slice:0:15}}
                     </p>
                     <p>

@@ -10,6 +10,7 @@ import { ParceirosComponent } from './parceiros/parceiros.component';
 import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
 import { PerfilEditComponent } from './edit/perfil-edit/perfil-edit.component';
 import { MenuComponent } from './menu/menu.component';
+import { ProdutoComponent } from './produto/produto.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -19,10 +20,12 @@ const routes: Routes = [
   {path: 'parceiros/:id', component: ParceirosComponent},
   {path: 'carrinho', component: CarrinhoComponent},
   {path: 'causas', component: CausasComponent},
+  {path: 'produto/:id', component: ProdutoComponent},
   {path: 'produto-edit/:id', component: ProdutoEditComponent},
   {path: 'produto-delete/:id', component: ProdutoDeleteComponent},
   {path: 'perfil-edit/:id', component: PerfilEditComponent},
   {path: 'menu', component: MenuComponent}
+
 
 ];
 

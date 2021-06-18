@@ -21,7 +21,7 @@ export class EntrarComponent implements OnInit {
 
   ngOnInit(){
     window.scroll(0,0)
-  
+
   }
 
   entrar(){
@@ -36,13 +36,9 @@ export class EntrarComponent implements OnInit {
       environment.descricao = this.userLogin.descricao
       environment.email = this.userLogin.email
       environment.tipo = this.userLogin.tipo
+      
+        this.router.navigate(['/parceiros/',this.userLogin.id])
 
-      if(this.userLogin.tipo == 'doador') {
-        this.router.navigate(['/causas'])
-      } else {
-        console.log(environment);
-        this.router.navigate(['/parceiros/id'])
-      }
 
     },error=>{
       if( error.status == 500 ){

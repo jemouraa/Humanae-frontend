@@ -22,11 +22,11 @@ export class UsuariosService {
   }
 
   getByIdUsuario(id: number):Observable<User>{
-    return this.http.get<User>(`http://localhost:8080/usuarios/${id}`, this.token)
+    return this.http.get<User>(`http://localhost:8080/usuarios/${id}`)
   }
 
   getByCausa(causa: string):Observable<User[]>{
-    return this.http.get<User[]>(`http://localhost:8080/causa/${causa}`,this.token)
+    return this.http.get<User[]>(`http://localhost:8080/causa/${causa}`)
   }
 
   postUsuario(usuario: User): Observable<User>{

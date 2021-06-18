@@ -41,24 +41,17 @@ export class AuthService {
     return ok
   }
 
-  parceiro(){
+  deslogado(){
     let ok: boolean = false
 
-    if (environment.tipo == 'parceiro'){
+    if (environment.token == ''){
       ok = true
     }
 
     return ok
   }
 
-  doador(){
-    let ok: boolean = false
 
-    if (environment.tipo == 'doador'){
-      ok = true
-    }
 
-    return ok
-  }
 
 }
