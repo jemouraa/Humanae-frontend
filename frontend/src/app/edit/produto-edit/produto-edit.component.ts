@@ -28,7 +28,8 @@ private route: ActivatedRoute
       Swal.fire({
         icon: 'info',
         title: 'Oops...',
-        text: 'Sua sessão expirou!'
+        text: 'Sua sessão expirou!',
+        confirmButtonColor: '#FECE2D'
       })
       this.router.navigate(['/home']);
     }
@@ -47,11 +48,12 @@ private route: ActivatedRoute
   atualizarProdutos(){
     this.produtoService.postProdutos(this.produto).subscribe((resp: Produto) =>{
       this.produto = resp
-      Swal.fire(
-        "Sucesso",
-        "Perfil atualizado com sucesso!",
-        "success",
-      )
+      Swal.fire({
+        icon: 'success',
+        title: 'Sucesso',
+        text: 'Produto atualizado com sucesso!',
+        confirmButtonColor: '#FECE2D'
+      })
       this.router.navigate(['/parceiros/id']);
     })
    }

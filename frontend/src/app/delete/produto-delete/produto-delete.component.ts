@@ -49,11 +49,12 @@ private route: ActivatedRoute
   apagarProdutos(){
    
     this.produtoService.deleteProdutos(this.idProd).subscribe(() =>{
-      Swal.fire(
-        "Sucesso",
-        "Este produto foi apagado!",
-        "success",
-      )
+      Swal.fire({
+        icon: 'success',
+        title: 'Sucesso',
+        text: "Este produto foi apagado!",
+        confirmButtonColor: '#FECE2D'
+      })
       this.router.navigate(['/parceiros/id']);
     })
    }

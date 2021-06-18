@@ -41,16 +41,6 @@ export class ParceirosComponent implements OnInit{
   ngOnInit() {
     window.scroll(0,0)
 
-    if(environment.token == '') {
-
-      Swal.fire({
-        icon: 'info',
-        title: 'Oops...',
-        text: 'Sua sessão expirou!'
-      })
-      this.router.navigate(['/home']);
-    }
-
    this.findByIdUser();
     //console.log(id)
   }
@@ -74,11 +64,12 @@ export class ParceirosComponent implements OnInit{
 
     this.produtoService.postProdutos(this.produto).subscribe((resp: Produto)=> {
         this.produto = resp
-        Swal.fire(
-          'Sucesso',
-          'Produto cadastrado com sucesso!',
-          'success'
-        )
+        Swal.fire({
+          icon: 'success',
+          title: 'Sucesso',
+          text: 'Produto cadastrado com sucesso!',
+          confirmButtonColor: '#FECE2D'
+        })
         this.produto = new Produto
         this.findByIdUser()
     })
