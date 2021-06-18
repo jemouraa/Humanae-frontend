@@ -26,18 +26,12 @@ export class CadastrarComponent implements OnInit {
     window.scroll(0,0)
   }
 
-  tipoUser(event: any) {
-    this.tipoUsuario = event.target.value
-    console.log(this.tipoUsuario)
-  }
-
   confirmSenha(event: any) {
     this.confirmarSenha = event.target.value
     console.log(this.confirmarSenha)
   }
 
   cadastrar() {
-      this.user.tipo = this.tipoUsuario
       if(this.user.senha !== this.confirmarSenha) {
         Swal.fire(
           "Senha Incorreta!",

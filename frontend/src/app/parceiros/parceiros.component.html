@@ -137,11 +137,11 @@
                         <option value="8">8</option>
                         <option value="9">9</option>
                         <option value="10">10</option></select>-->
-                        <a *ngIf='authService.doador()' data-toggle="modal"
+                        <a *ngIf='authService.logado()' data-toggle="modal"
                       data-target="#carrinho"class="btn btn-warning mc"  >Quero doar!</a>
-                      <a  *ngIf='authService.parceiro()'
+                      <a  *ngIf='authService.logado()'
                       data-target=""class="btn btn-info mc" [routerLink]="['/produto-edit', produtos.id]"  >Editar</a>
-                      <a  *ngIf='authService.parceiro()'
+                      <a  *ngIf='authService.logado()'
                       data-target=""class="btn btn-warning mc" [routerLink]="['/produto-delete', produtos.id]">Apagar</a>
                     </div>
                   </div>
