@@ -21,7 +21,8 @@ import { ContatoComponent } from './contato/contato.component';
 import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
 import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
 import { PerfilEditComponent } from './edit/perfil-edit/perfil-edit.component';
-import { NavegacaoComponent } from './navegacao/navegacao.component';
+import { ProdutoComponent } from './produto/produto.component';
+
 
 
 @NgModule({
@@ -43,8 +44,8 @@ import { NavegacaoComponent } from './navegacao/navegacao.component';
     ProdutoEditComponent,
     ProdutoDeleteComponent,
     PerfilEditComponent,
-    NavegacaoComponent,
-    CausasComponent
+    CausasComponent,
+    ProdutoComponent
 
   ],
   imports: [
