@@ -45,7 +45,8 @@ export class EntrarComponent implements OnInit {
         Swal.fire({
           icon: 'warning',
           title: 'Atenção',
-          text: 'Usuário ou senha incorretos!'
+          text: 'Usuário ou senha incorretos!',
+          confirmButtonColor: '#FECE2D'
         })
 
     }}

@@ -75,11 +75,12 @@ export class ParceirosComponent implements OnInit{
 
     this.produtoService.postProdutos(this.produto).subscribe((resp: Produto)=> {
         this.produto = resp
-        Swal.fire(
-          'Sucesso',
-          'Produto cadastrado com sucesso!',
-          'success'
-        )
+        Swal.fire({
+          icon: 'success',
+          title: 'Sucesso',
+          text: 'Produto cadastrado com sucesso!',
+          confirmButtonColor: '#FECE2D'
+        })
         this.produto = new Produto
 
     })

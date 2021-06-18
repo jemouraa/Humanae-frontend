@@ -33,11 +33,12 @@ export class CadastrarComponent implements OnInit {
 
   cadastrar() {
       if(this.user.senha !== this.confirmarSenha) {
-        Swal.fire(
-          "Senha Incorreta!",
-          "Tente novamente!",
-          "error"
-        )
+        Swal.fire({
+          icon: 'error',
+          title: "Senha Incorreta!",
+          text: "Tente novamente!",
+          confirmButtonColor: '#FECE2D'
+        })
 
       } else {
           this.authService.cadastrar(this.user).subscribe((resp: User) => {
@@ -45,11 +46,12 @@ export class CadastrarComponent implements OnInit {
           console.log(this.user)
           this.router.navigate(['/home'])
 
-          Swal.fire(
-            "Sucesso",
-            "Usuário cadastrado com sucesso!",
-            "success",
-          )
+          Swal.fire({
+            icon: 'success',
+            title: 'Sucesso',
+            text:  "Usuário cadastrado com sucesso!",
+            confirmButtonColor: '#FECE2D'
+          })
         })
       }
 
