@@ -128,7 +128,7 @@ export class ParceirosComponent implements OnInit{
           descricao: this.produto.descricao,
           usuario: this.produto.usuario,
           quantidade: this.quant,
-          //valorParcial: this.vParcial
+          valorParcial: this.vParcial
         })
       localStorage.setItem('carrinho', JSON.stringify(this.carrinho))
       Swal.fire({

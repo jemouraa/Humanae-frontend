@@ -102,8 +102,7 @@
       <!--Card Produtos-->
       <div class="col-md-9">
         <div class="card-deck">
-          <div
-<<<<<<< HEAD
+          <div>
             class="row col-md h-100 pt-5"
             *ngFor='let produtos of user.produto'
           >
@@ -170,48 +169,6 @@
                           >Quero doar!</a
                         >
                         <!--<a  *ngIf='authService.parceiro()'data-toggle="modal"
-=======
-              class="card text-center mc h-100"
-              style="max-width: 18rem; max-height: 31.25rem"
-            >
-              <div class="container d-flex justify-content-center">
-                <div
-                  class="container-fluid profile-img rounded"
-                  style="overflow: hidden"
-                >
-                  <img class="img-fluid"
-                    src="{{ produtos.imagem }}"
-                    alt="imagem do produto"
-                    style="width: 15.625rem; height: 12.5rem"
-                  />
-                </div>
-                <div
-                  class="container-fluid d-flex justify-content-center"
-                  style="padding-top: 14.375rem; max-height: 31.25rem"
-                >
-                  <div>
-                    <h5 class="">{{ produtos.nome | slice:0:15}}</h5>
-                    <p class="tx-cd">{{ produtos.descricao | slice:0:150}}</p>
-                    <h4 class="price font-weight-bold mt-2">
-                      R$ {{ produtos.preco }}
-                    </h4>
-                    <div class="d-flex justify-content-between">
-                      <!----<select class="custom-select mc">
-                       <option selected>Qtd</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option></select>-->
-                        <a *ngIf='!authService.logado()' data-toggle="modal"
-                      data-target="#carrinho"class="btn btn-warning mc"  >Quero doar!</a>
-                      <a  *ngIf='authService.logado()'
->>>>>>> 3ad52522d9b49b7d6bc49be2477320497d5a1ae0
                       data-target=""class="btn btn-info mc" [routerLink]="['/produto-edit', produtos.id]"  >Editar</a>
                       <a  *ngIf='authService.parceiro()' data-toggle="modal"
                       data-target=""class="btn btn-warning mc" [routerLink]="['/produto-delete', produtos.id]">Apagar</a>-->

@@ -8,4 +8,6 @@ export class Produto{
     public quantidade: number
     public descricao: string
     public usuario: User
+    
+    public valorParcial: number
 }
