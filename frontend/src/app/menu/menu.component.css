@@ -10,8 +10,11 @@ header .gris{
 
 .fonte{
     font-family: "Roboto", sans-serif;
-    color: #fdbe0f; 
+    color: #fdbe0f;
     font-size: 25px;
     font-weight: bolder;
 }
 
+.fa-shopping-cart{
+  color: #fdbe0f;
+}

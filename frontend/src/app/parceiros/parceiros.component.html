@@ -102,9 +102,9 @@
       <!--Card Produtos-->
       <div class="col-md-9">
         <div class="card-deck">
-          <div>
+          <div
             class="row col-md h-100 pt-5"
-            *ngFor='let produtos of user.produto'
+            *ngFor='let produto of user.produto'
           >
             <div class="container-fluid d-flex justify-content-center">
               <div
@@ -118,7 +118,7 @@
                   >
                     <img
                       class="img-fluid"
-                      src="{{ produtos.imagem }}"
+                      src="{{ produto.imagem }}"
                       alt="imagem do produto"
                       style="width: 15.625rem; height: 12.5rem"
                     />
@@ -128,15 +128,15 @@
                     style="padding-top: 14.375rem; max-height: 31.25rem"
                   >
                     <div>
-                      <h5 class="">{{ produtos.nome | slice: 0:15 }}</h5>
+                      <h5 class="">{{ produto.nome | slice: 0:15 }}</h5>
                       <p class="tx-cd">
-                        {{ produtos.descricao | slice: 0:150 }}}
+                        {{ produto.descricao | slice: 0:150 }}}
                       </p>
                       <h4 class="price font-weight-bold mt-2">
-                        R$ {{ produtos.preco }}
+                        R$ {{ produto.preco }}
                       </h4>
-                      <div class="d-flex justify-content-around bt-2">
-                        <input
+                      <div class="d-flex justify-content-center ">
+                       <!--<input
                           class="bt-2"
                           type="button"
                           id="minus"
@@ -162,16 +162,16 @@
                           value="+"
                           (click)="process(1)"
                           (click)="parcial()"
-                        />
-                        <a
-                          data-toggle="modal" [routerLink]="['/carrinho']"
-                          class="btn btn-warning mc m-0 mx-2"
+                        />-->
+                        <a *ngIf='authService.deslogado()'
+                          data-toggle="modal" href="#carrinho"
+                          class="btn btn-warning"
                           >Quero doar!</a
                         >
-                        <!--<a  *ngIf='authService.parceiro()'data-toggle="modal"
-                      data-target=""class="btn btn-info mc" [routerLink]="['/produto-edit', produtos.id]"  >Editar</a>
-                      <a  *ngIf='authService.parceiro()' data-toggle="modal"
-                      data-target=""class="btn btn-warning mc" [routerLink]="['/produto-delete', produtos.id]">Apagar</a>-->
+                        <a  *ngIf='authService.logado()'data-toggle="modal"
+                      data-target=""class="btn btn-info mc" [routerLink]="['/produto-edit', produto.id]"  >Editar</a>
+                      <a  *ngIf='authService.logado()' data-toggle="modal"
+                      data-target=""class="btn btn-warning mc" [routerLink]="['/produto-delete', produto.id]">Apagar</a>
                       </div>
                     </div>
                   </div>
@@ -181,16 +181,6 @@
           </div>
         </div>
       </div>
-
-
-
-
-
-
-
-
-
-
     <!--modal carrinho-->
     <div
       class="modal fade"

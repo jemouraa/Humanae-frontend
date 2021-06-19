@@ -1,9 +1,10 @@
-import { Router } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Produto } from 'src/app/model/Produto';
 import { Component, Input, OnInit } from '@angular/core';
 import { AuthService } from '../service/auth.service';
 import { environment } from 'src/environments/environment.prod';
 import Swal from 'sweetalert2';
+import { User } from '../model/User';
 
 @Component({
   selector: 'app-carrinho',
@@ -13,6 +14,8 @@ import Swal from 'sweetalert2';
 export class CarrinhoComponent implements OnInit {
   produto: Produto = new Produto
   carrinho: Produto[]
+  user: User = new User
+  listaUser: User[]
   vParcial: number
   vTotal: number
   vazio: string
@@ -23,13 +26,14 @@ export class CarrinhoComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
     window.scroll(0,0)
     this.exibirCarrinho()
     this.total()
+    this.total= this.route.snapshot.params['total']
   }
 
   exibirCarrinho() {

@@ -1,10 +1,10 @@
 .bg {
-    background-image: url("https://i.imgur.com/F7txLr5.png");
+    background-image: url("https://i.imgur.com/kBxIZWC.png");
     height: 660px;
     background-position: top;
     background-repeat: no-repeat;
-    background-size: cover; 
-    
+    background-size: cover;
+
   }
 
   .bgg{
@@ -37,7 +37,7 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-    color: #fdbe0f;   
+    color: #fdbe0f;
 }
 
 .f2{
@@ -81,7 +81,7 @@ h1{
 body{
     margin: 0;
     padding: 0;
-    min-height: 100vh;    
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -116,7 +116,7 @@ body{
 }
 
 .container .card:hover .face.face1{
-  
+
     transform: translateY(0);
 }
 
@@ -178,4 +178,3 @@ body{
 hr{
     height: 30px;
 }
-  

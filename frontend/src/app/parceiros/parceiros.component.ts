@@ -25,10 +25,6 @@ export class ParceirosComponent implements OnInit{
   listaProdutos: Produto[]
   listaUser: User[]
   userLogin: UserLogin = new UserLogin
-  nome = environment.nome
-  imagem = environment.imagem
-  descricao = environment.descricao
-  causa = environment.causa
   carrinho: Produto[]
   quant: number
   vParcial: number
@@ -63,7 +59,6 @@ export class ParceirosComponent implements OnInit{
       this.user = resp
     })
   }
-
 
   cadastrarProdutos() {
     if (environment.token == '') {
@@ -107,15 +102,6 @@ export class ParceirosComponent implements OnInit{
   }
 
   addCarrinho() {
-    if (environment.token == "") {
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'É preciso estar logado para comprar'
-      })
-
-      this.router.navigate(["/login"])
-    } else {
       this.parcial()
       this.carrinho = JSON.parse(localStorage.getItem('carrinho') || '[]')
 
@@ -134,15 +120,15 @@ export class ParceirosComponent implements OnInit{
       Swal.fire({
         icon: 'success',
         title: 'Boa!',
-        text: 'Produto adicionado com sucesso!'
+        text: 'Produto adicionado com sucesso!',
+        confirmButtonColor: '#FECE2D'
       })
 
-      this.router.navigate(['/carrinho'])
     }
     //carrinho//
 
-  }
 
+  }
 
 
   //comprar(){
@@ -151,4 +137,4 @@ export class ParceirosComponent implements OnInit{
      // this.produto = resp
  // })
 //}
-}
+
