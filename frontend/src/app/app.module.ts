@@ -14,7 +14,6 @@ import { MenuComponent } from './menu/menu.component';
 import { ParceirosComponent } from './parceiros/parceiros.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { HomeComponent } from './home/home.component';
 import { TimeComponent } from './home/time/time.component';
 import { ContatoComponent } from './contato/contato.component';
@@ -33,7 +32,6 @@ import { ProdutoComponent } from './produto/produto.component';
     EntrarComponent,
     CadastrarComponent,
     ParceirosComponent,
-    CarrinhoComponent,
     CadastrarComponent,
     EntrarComponent,
     ParceirosComponent,

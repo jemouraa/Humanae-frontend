@@ -1,178 +1,156 @@
 <app-menu></app-menu>
 <div class="bg">
   <!--Card Perfil-->
-    <div class="row">
-      <div class="col-md-3 *ngFor='let user of listaUser'">
-        <div class="d-flex justify-content-center"  >
-          <div
-            class="profile-img text-center"
-            style="
-              margin-top: 6rem;
-              width: 12.5rem;
-              height: 12.5rem;
-              border-radius: 50%;
-              overflow: hidden;
-              border-style: solid;
-              border-color: whitesmoke;
-            "
+  <div class="row">
+    <div class="col-md-3 *ngFor='let user of listaUser'">
+      <div class="d-flex justify-content-center">
+        <div
+          class="profile-img text-center"
+          style="
+            margin-top: 6rem;
+            width: 12.5rem;
+            height: 12.5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border-style: solid;
+            border-color: whitesmoke;">
+          <img class="img-fluid"
+            src="{{ user.imagem }}"
+            alt="imagem de perfil"/>
+        </div>
+        <div class="container card-perfil text-center">
+          <h2 class="d-flex justify-content-center tx">{{ user.nome }}</h2>
+          <hr />
+          <p class="font-weight-bold tx">
+            <fa-icon
+              [icon]="faCircleInfo"
+              size="1x"
+              [class]="['icones']"
+            ></fa-icon>
+            QUEM SOMOS
+          </p>
+          <p class="text-muted">{{ user.descricao }}</p>
+          <hr />
+          <p class="font-weight-bold tx">
+            <fa-icon [icon]="faHeart" size="1x" [class]="['icones']"> </fa-icon>
+            NOSSAS CAUSAS
+          </p>
+          <p class="text-muted">{{ user.causa }}</p>
+
+          <hr />
+          <div>
+            <ul class="social-network">
+              <p>Siga-nos nas redes sociais</p>
+              <li>
+                <a
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                  class="icoFacebook"
+                >
+                  <fa-icon [icon]="faFacebook" size="2x" [class]="['icones']">
+                  </fa-icon>
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  class="icoInstagram"
+                >
+                  <fa-icon [icon]="faInstagram" size="2x" [class]="['icones']">
+                  </fa-icon>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <button
+            *ngIf="authService.logado()"
+            type="button"
+            class="btn btn-outline-info my-3"
+            data-toggle="modal"
+            data-target="#ExemploModalCentralizado"
           >
-            <img class="img-fluid" src="{{ user.imagem }}" alt="imagem de perfil" />
-          </div>
-          <div class="container card-perfil text-center">
-            <h2 class="d-flex justify-content-center tx">{{ user.nome }}</h2>
-            <hr />
-            <p class="font-weight-bold tx">
-              <fa-icon
-                [icon]="faCircleInfo"
-                size="1x"
-                [class]="['icones']"
-              ></fa-icon>
-              QUEM SOMOS
-            </p>
-            <p class="text-muted">{{ user.descricao }}</p>
-            <hr />
-            <p class="font-weight-bold tx">
-              <fa-icon [icon]="faHeart" size="1x" [class]="['icones']">
-              </fa-icon>
-              NOSSAS CAUSAS
-            </p>
-            <p class="text-muted">{{ user.causa }}</p>
-
-            <hr />
-            <div>
-              <ul class="social-network">
-                <p>Siga-nos nas redes sociais</p>
-                <li>
-                  <a
-                    href="https://www.facebook.com/"
-                    target="_blank"
-                    class="icoFacebook"
-                  >
-                    <fa-icon [icon]="faFacebook" size="2x" [class]="['icones']">
-                    </fa-icon>
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="https://www.instagram.com/"
-                    target="_blank"
-                    class="icoInstagram"
-                  >
-                    <fa-icon
-                      [icon]="faInstagram"
-                      size="2x"
-                      [class]="['icones']"
-                    >
-                    </fa-icon>
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <button
-              *ngIf="authService.logado()"
-              type="button"
-              class="btn btn-outline-info my-3"
-              data-toggle="modal"
-              data-target="#ExemploModalCentralizado"
-            >
-              Cadastrar Produto
-            </button>
-            <button
-              *ngIf="authService.logado()"
-              type="button"
-              class="btn btn-outline-info my-3"
-              [routerLink]="['/perfil-edit', user.id]"
-            >
-              Editar Perfil
-            </button>
-            <button
-              routerLink="/home"
-              type="button"
-              class="btn btn-outline-warning my-3"
-              data-toggle="modal"
-              data-target="#ExemploModalCentralizado"
-            >
-              Voltar para home
-            </button>
-          </div>
+            Cadastrar Produto
+          </button>
+          <button
+            *ngIf="authService.logado()"
+            type="button"
+            class="btn btn-outline-info my-3"
+            [routerLink]="['/perfil-edit', user.id]"
+          >
+            Editar Perfil
+          </button>
+          <button
+            routerLink="/home"
+            type="button"
+            class="btn btn-outline-warning my-3"
+            data-toggle="modal"
+            data-target="#ExemploModalCentralizado"
+          >
+            Voltar para home
+          </button>
         </div>
       </div>
-      <!--Card Produtos-->
-      <div class="col-md-9">
-        <div class="card-deck">
-          <div
-            class="row col-md h-100 pt-5"
-            *ngFor='let produto of user.produto'
-          >
-            <div class="container-fluid d-flex justify-content-center">
-              <div
-                class="card text-center mc h-100"
-                style="max-width: 18rem; max-height: 31.25rem"
-              >
-                <div class="container d-flex justify-content-center">
-                  <div
-                    class="container-fluid profile-img rounded"
-                    style="overflow: hidden"
-                  >
-                    <img
-                      class="img-fluid"
-                      src="{{ produto.imagem }}"
-                      alt="imagem do produto"
-                      style="width: 15.625rem; height: 12.5rem"
-                    />
-                  </div>
-                  <div
-                    class="container-fluid d-flex justify-content-center"
-                    style="padding-top: 14.375rem; max-height: 31.25rem"
-                  >
-                    <div>
-                      <h5 class="">{{ produto.nome | slice: 0:15 }}</h5>
-                      <p class="tx-cd">
-                        {{ produto.descricao | slice: 0:150 }}}
-                      </p>
-                      <h4 class="price font-weight-bold mt-2">
-                        R$ {{ produto.preco }}
-                      </h4>
-                      <div class="d-flex justify-content-center ">
-                       <!--<input
-                          class="bt-2"
-                          type="button"
-                          id="minus"
-                          value="-"
-                          (click)="process(-1)"
-                          (click)="parcial()"
-                        />
-                        <input
-                          class="bt-2"
-                          [(ngModel)]="quant"
-                          id="quant"
-                          name="quant"
-                          class="text"
-                          size="1"
-                          value="1"
-                          type="text"
-                          maxlength="2"
-                        />
-                        <input
-                          class="bt-2"
-                          type="button"
-                          id="plus"
-                          value="+"
-                          (click)="process(1)"
-                          (click)="parcial()"
-                        />-->
-                        <a *ngIf='authService.deslogado()'
-                          data-toggle="modal" href="#carrinho"
-                          class="btn btn-warning"
-                          >Quero doar!</a
-                        >
-                        <a  *ngIf='authService.logado()'data-toggle="modal"
-                      data-target=""class="btn btn-info mc" [routerLink]="['/produto-edit', produto.id]"  >Editar</a>
-                      <a  *ngIf='authService.logado()' data-toggle="modal"
-                      data-target=""class="btn btn-warning mc" [routerLink]="['/produto-delete', produto.id]">Apagar</a>
-                      </div>
+    </div>
+    <!--Card Produtos-->
+    <div class="col-md-9">
+      <div class="card-deck">
+        <div class="row col-md h-100 pt-5" *ngFor="let produto of user.produto">
+          <div class="container-fluid d-flex justify-content-center">
+            <div
+              class="card text-center mc h-100"
+              style="width: 14rem; height: 30rem"
+            >
+              <div class="container d-flex justify-content-center">
+                <div
+                  class="container-fluid profile-img rounded"
+                  style="overflow: hidden"
+                >
+                  <img
+                    class="img-fluid"
+                    src="{{ produto.imagem }}"
+                    alt="imagem do produto"
+                    style="width: 15.625rem; height: 12.5rem"
+                  />
+                </div>
+                <div
+                  class="container-fluid d-flex justify-content-center"
+                  style="padding-top: 14.375rem; height: 28rem; ;"
+                >
+                  <div>
+                    <h5 style="height: 2rem">{{ produto.nome | slice: 0:15 }}</h5>
+                    <p class="tx-cd" style="height: 6rem">
+                      {{ produto.descricao | slice: 0:150 }}}
+                    </p>
+                    <h4 class="price font-weight-bold mb-2">
+                      R$ {{ produto.preco}}
+                    </h4>
+                    <div class="d-flex justify-content-center">
+                      <a
+                        *ngIf="authService.deslogado()"
+                        data-toggle="modal"
+                        href="#carrinho"
+                        class="btn btn-warning"
+                        >Quero doar!</a
+                      >
+                      <a
+                        *ngIf="authService.logado()"
+                        data-toggle="modal"
+                        data-target=""
+                        class="btn btn-info mc"
+                        [routerLink]="['/produto-edit', produto.id]"
+                        >Editar</a
+                      >
+                      <a
+                        *ngIf="authService.logado()"
+                        data-toggle="modal"
+                        data-target=""
+                        class="btn btn-warning mc"
+                        [routerLink]="['/produto-delete', produto.id]"
+                        >Apagar</a
+                      >
                     </div>
                   </div>
                 </div>
@@ -181,6 +159,9 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
     <!--modal carrinho-->
     <div
       class="modal fade"
@@ -193,7 +174,7 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="TituloModalCentralizado">Pedido</h5>
+            <h5 class="modal-title" id="TituloModalCentralizado">Gratidão</h5>
             <button
               type="button"
               class="close"
@@ -203,25 +184,13 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
-            <table class="table table-hover">
-              <thead>
-                <tr>
-                  <th scope="col">Item</th>
-                  <th scope="col">Descrição</th>
-                  <th scope="col" colspan="2">Valor</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row"></th>
-                  <td colspan="2"></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-            <h5>Total R$</h5>
-
+          <div class="modal-body text-center">
+            <img src="https://i.imgur.com/siOg4Tx.jpg" style="width: 16rem; height: 20rem; margin-left: 1rem; border-radius: 1rem;">
+            <p class="modal-body tx-cd">
+              Nos orgulha saber que existem pessoas que se dedicam todos os dias
+              para cumprir sua missão por um país inteiro.
+            </p>
+            <p class="modal-body text-mutted ">Pessoas como VOCÊ!</p>
             <div class="d-flex justify-content-center">
               <button class="btn btn-warning mr-4" data-dismiss="modal">
                 Cancelar
@@ -229,10 +198,10 @@
               <a
                 href="https://i.imgur.com/b7vyhkA.jpg"
                 class="btn btn-blue"
-                data-dismiss="modal"
+                target="_blank"
               >
                 Pagamento
-              </a>
+            </a>
             </div>
           </div>
         </div>
@@ -343,4 +312,4 @@
       <!-- /Modal -->
     </div>
   </div>
-</div>
+

@@ -28,15 +28,15 @@
                       {{user.nome  | uppercase }}
                     </h4>
                     <p >
-                     {{user.causa | slice:0:15}}
+                     {{user.causa | slice:0:15 | uppercase}}
                     </p>
-                    <p>
+                    <p style="height: 5rem">
                       {{user.descricao | slice:0:160}}
                      </p>
 
                     <button
                       type="button"
-                      class="btn btn-warning text-white m-3" [routerLink]="['/parceiros/', user.id]" >
+                      class="btn btn-info text-white m-3 bt" [routerLink]="['/parceiros/', user.id]" >
                       Ver Produtos
                     </button>
                   </div>
