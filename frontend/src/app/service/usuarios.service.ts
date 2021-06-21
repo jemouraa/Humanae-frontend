@@ -18,27 +18,27 @@ export class UsuariosService {
   }
 
   getAllUsuario(): Observable<User[]> {
-    return this.http.get<User[]>('http://localhost:8080/usuarios')
+    return this.http.get<User[]>('https://doe-humanae.herokuapp.com/usuarios')
   }
 
   getByIdUsuario(id: number):Observable<User>{
-    return this.http.get<User>(`http://localhost:8080/usuarios/${id}`)
+    return this.http.get<User>(`https://doe-humanae.herokuapp.com/usuarios/${id}`)
   }
 
   getByCausa(causa: string):Observable<User[]>{
-    return this.http.get<User[]>(`http://localhost:8080/causa/${causa}`)
+    return this.http.get<User[]>(`https://doe-humanae.herokuapp.com/causa/${causa}`)
   }
 
   postUsuario(usuario: User): Observable<User>{
-    return this.http.post<User>('http://localhost:8080/usuarios', usuario, this.token)
+    return this.http.post<User>('https://doe-humanae.herokuapp.com/usuarios', usuario, this.token)
   }
 
   putUsuario(usuario: User): Observable<User>{
-    return this.http.put<User>('http://localhost:8080/usuarios', usuario, this.token)
+    return this.http.put<User>('https://doe-humanae.herokuapp.com/usuarios', usuario, this.token)
   }
 
   deleteUsuario(id: number) {
-    return this.http.delete(`http://localhost:8080/usuarios'/${id}`, this.token)
+    return this.http.delete(`https://doe-humanae.herokuapp.com/usuarios'/${id}`, this.token)
   }
 }
 
