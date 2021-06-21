@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faGithub, faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-time',
@@ -11,5 +12,6 @@ export class TimeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  faGithubSquare = faGithubSquare;
+  faLinkedin = faLinkedin;
 }
