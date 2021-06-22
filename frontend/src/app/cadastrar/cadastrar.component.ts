@@ -1,4 +1,4 @@
-import { Categoria } from './../model/Categoria';
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
@@ -12,7 +12,7 @@ import { AuthService } from '../service/auth.service';
 })
 
 export class CadastrarComponent implements OnInit {
-  
+
   user: User = new User()
   confirmarSenha: string
   tipoUsuario: string

@@ -1,7 +1,7 @@
+import { Produto } from './../../model/Produto';
 import { ProdutosService } from './../../service/produtos.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { Produto } from 'src/app/model/Produto';
 import { environment } from 'src/environments/environment.prod';
 import Swal from 'sweetalert2';
 
@@ -54,8 +54,9 @@ private route: ActivatedRoute
         text: 'Produto atualizado com sucesso!',
         confirmButtonColor: '#FECE2D'
       })
-      this.router.navigate(['/parceiros/id']);
+
     })
+    this.findByIdProduto
    }
 
 }

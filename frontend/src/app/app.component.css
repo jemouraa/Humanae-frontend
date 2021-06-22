@@ -1,11 +1,12 @@
 #img-bg{
     background-image: url('https://i.imgur.com/keSRXno.png');
 
-    min-height: 695px;
+    min-height:  43.438rem;
 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 html{
+  min-height: 100%;
   background-color: whitesmoke;}

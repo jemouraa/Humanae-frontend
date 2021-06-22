@@ -1,7 +1,4 @@
-*{
-    margin: 30;
-    padding: 50;
-}
+
 
 .bgcolor1{
     background-color:  #f5f1f1;
@@ -30,7 +27,7 @@ h1{
 
 h3{
     font-size: 1.5rem;
-    color:#333;
+    color:#555;
     font-weight: bold;
 }
 
@@ -106,3 +103,9 @@ color: rgb(102, 102, 102);
 }
 
 
+.card-body p{
+
+  font-size: 0.92rem;
+  height: 12rem ;
+
+}

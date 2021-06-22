@@ -10,7 +10,6 @@ import { UserLogin } from '../model/UserLogin';
 })
 export class AuthService {
 
-
   constructor(
   private http: HttpClient
   ) { }
@@ -19,15 +18,15 @@ export class AuthService {
     headers: new HttpHeaders().set('Authorization', environment.token)}
 
   entrar(userLogin: UserLogin): Observable<UserLogin>{
-    return this.http.post<UserLogin>("https://doe-humanae.herokuapp.com/usuarios/logar", userLogin)
+    return this.http.post<UserLogin>('https://doe-humanae.herokuapp.com/usuarios/logar', userLogin)
   }
 
   cadastrar(user: User): Observable<User>{
-    return this.http.post<User>("https://doe-humanae.herokuapp.com/usuarios/cadastrar", user)
+    return this.http.post<User>('https://doe-humanae.herokuapp.com/usuarios/cadastrar', user)
 
   }
   getByIdUser(id: number): Observable<User>{
-    return this.http.get<User>('https://doe-humanae.herokuapp.com/usuarios/${id}', this.token)
+    return this.http.get<User>(`https://doe-humanae.herokuapp.com/usuarios/${id}`, this.token)
   }
 
 

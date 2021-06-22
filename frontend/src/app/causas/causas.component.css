@@ -26,6 +26,8 @@ ul{
 }
 
 .bg{
+  max-height: 100%;
+  max-width: 100%;
     background-color:whitesmoke
 
 }
@@ -44,3 +46,6 @@ ul{
 .bt{
   margin-top: 12rem;
 }
+html{
+  min-height: 100%;
+  background-color: whitesmoke;}

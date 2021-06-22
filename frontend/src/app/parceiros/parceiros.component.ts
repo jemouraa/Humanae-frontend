@@ -77,6 +77,7 @@ export class ParceirosComponent implements OnInit{
 
 
     })
-    this.findByIdUser(this.user.id)
+    this.router.navigate(['/parceiros/',this.userLogin.id])
+
   }
 }

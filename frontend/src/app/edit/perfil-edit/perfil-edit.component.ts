@@ -33,7 +33,7 @@ export class PerfilEditComponent implements OnInit {
     this.idUser = this.route.snapshot.params['id']
     this.findByIdUser(this.idUser)
   }
-  
+
   findByIdUser(id: number) {
     this.authService.getByIdUser(id).subscribe((resp: User) => {
       this.user = resp
@@ -43,17 +43,12 @@ export class PerfilEditComponent implements OnInit {
     this.confirmarSenha = event.target.value
   }
 
-  tipoUser(event: any) {
-    this.tipoUsuario = event.target.value
-  }
-
   atualizarPerfil() {
-    this.user.tipo = this.tipoUsuario
     if(this.user.senha !== this.confirmarSenha) {
       Swal.fire({
         icon: 'error',
         title:  "Senha Incorreta!",
-        text: "Tente novamente!", 
+        text: "Tente novamente!",
         confirmButtonColor: '#FECE2D'
       })
 
@@ -75,7 +70,6 @@ export class PerfilEditComponent implements OnInit {
         environment.id = 0
 
         this.router.navigate(['/entrar'])
-
       })
     }
 

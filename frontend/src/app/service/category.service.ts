@@ -25,7 +25,7 @@ export class CategoryService {
   }
 
   getByNome(nome: String):Observable<Categoria>{
-    return this.http.get<Categoria>('https://doe-humanae.herokuapp.com/nome/${nome}',this.token)
+    return this.http.get<Categoria>(`https://doe-humanae.herokuapp.com/nome/${nome}`,this.token)
   }
 
   postCategoria(categoria: Categoria): Observable<Categoria>{

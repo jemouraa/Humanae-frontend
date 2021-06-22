@@ -1,5 +1,6 @@
-<app-menu></app-menu>
 <div class="bg">
+  <app-menu></app-menu>
+
   <!--Card Perfil-->
   <div class="row">
     <div class="col-md-3 *ngFor='let user of listaUser'">
@@ -105,27 +106,27 @@
             >
               <div class="container d-flex justify-content-center">
                 <div
-                  class="container-fluid profile-img rounded"
+                  class="container-fluid profile-img rounded px-0"
                   style="overflow: hidden"
                 >
                   <img
                     class="img-fluid"
                     src="{{ produto.imagem }}"
                     alt="imagem do produto"
-                    style="width: 15.625rem; height: 12.5rem"
+                    style="width: 15rem; height: 12.5rem"
                   />
                 </div>
                 <div
                   class="container-fluid d-flex justify-content-center"
-                  style="padding-top: 14.375rem; height: 28rem; ;"
+                  style="padding-top: 14rem; height: 28rem; ;"
                 >
                   <div>
-                    <h5 style="height: 2rem">{{ produto.nome | slice: 0:15 }}</h5>
-                    <p class="tx-cd" style="height: 5rem">
-                      {{ produto.descricao | slice: 0:150 }}}
+                    <h5 style="height: 3rem">{{ produto.nome | slice: 0:30 }}</h5>
+                    <p class="tx-cd" style="height: 5.5rem">
+                      {{ produto.descricao | slice: 0:150 }}
                     </p>
                     <h4 class="price font-weight-bold mb-2">
-                      R$ {{ produto.preco}}
+                      R$ {{ produto.preco}},00
                     </h4>
                     <div class="d-flex justify-content-center">
                       <a
@@ -311,5 +312,5 @@
       </div>
       <!-- /Modal -->
     </div>
-  </div>
+</div>
 

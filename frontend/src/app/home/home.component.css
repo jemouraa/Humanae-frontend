@@ -16,11 +16,11 @@
   appearance: none;
   }
 
-  .bgcolor{
+.bgcolor{
     background-color: #f5f1f1;
   }
 
-  .p-100{
+.p-100{
     padding: 100px 3% 20px;
 }
 
@@ -89,7 +89,7 @@ body{
 }
 
 .container{
-    width: 1000px;
+    width: 62.5rem;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -101,8 +101,8 @@ body{
 }
 
 .container .card .face{
-    width: 300px;
-    height: 200px;
+    width: 18.75rem;
+    height: 12.5rem;
     transition: 0.5s;
 }
 
@@ -130,7 +130,7 @@ body{
 }
 
 .container .card .face.face1 .content img{
-    max-width: 250px;
+    max-width: 15.625rem;
 }
 
 .container .card .face.face1 .content h3{
